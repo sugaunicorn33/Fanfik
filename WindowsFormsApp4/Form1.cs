@@ -26,29 +26,43 @@ namespace WindowsFormsApp4
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            //Все картинки лежат в папках типа @G Слэш@
+            string folder = ratingComboBox.Text + " " + napravlennostComboBox.Text;
+
+
             if (ratingComboBox.Text == "NC-17" && napravlennostComboBox.Text == "Гет")
             {
-                ReadFanfikForm newForm = new ReadFanfikForm("Хвост феи");
+                ReadFanfikForm newForm = new ReadFanfikForm("Хвост феи", "");
                 newForm.Show();
             }
             else if (ratingComboBox.Text == "NC-17" && napravlennostComboBox.Text == "Слэш")
             {
-                ReadFanfikForm newForm = new ReadFanfikForm("Херня");
+                ReadFanfikForm newForm = new ReadFanfikForm("Херня", "");
                 newForm.Show();
             }
             else if (ratingComboBox.Text == "PG-13" && napravlennostComboBox.Text == "Гет")
             {
-                ReadFanfikForm newForm = new ReadFanfikForm("Стар");
+                ReadFanfikForm newForm = new ReadFanfikForm("Стар", "");
                 newForm.Show();
             }
             else if (ratingComboBox.Text == "NC-21" && napravlennostComboBox.Text == "Слэш")
             {
-                ReadFanfikForm newForm = new ReadFanfikForm("Арми");
+                ReadFanfikForm newForm = new ReadFanfikForm("Арми", "");
                 newForm.Show();
             }
             else if (ratingComboBox.Text == "G" && napravlennostComboBox.Text == "Джен")
             {
-                ReadFanfikForm newForm = new ReadFanfikForm("Йода");
+                ReadFanfikForm newForm = new ReadFanfikForm("Йода", folder);
+                newForm.Show();
+            }
+            else if (ratingComboBox.Text == "G" && napravlennostComboBox.Text == "Гет")
+            {
+                ReadFanfikForm newForm = new ReadFanfikForm("Силачка", folder);
+                newForm.Show();
+            }
+            else if (ratingComboBox.Text == "G" && napravlennostComboBox.Text == "Слэш")
+            {
+                ReadFanfikForm newForm = new ReadFanfikForm("Чимин и Шуга", folder);
                 newForm.Show();
             }
             else

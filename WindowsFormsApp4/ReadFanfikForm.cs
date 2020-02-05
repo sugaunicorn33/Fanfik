@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
+using System.IO;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,34 +12,36 @@ namespace WindowsFormsApp4
 {
     public partial class ReadFanfikForm : Form
     {
-        public ReadFanfikForm(string pictureName)
+        public ReadFanfikForm(string pictureName, string folder)
         {
             InitializeComponent();
 
             Text = pictureName;
+            try
+            {
+                pictureBox1.Load("../../Resources/" + folder + "/" + pictureName + ".jpg");
+                textBox1.Lines = File.ReadAllLines("../../Resources/" + folder + "/" + pictureName + ".txt");
+            }
+            catch (Exception) { }
+
             if (pictureName == "Хвост феи")
             {
-                pictureBox1.Load("../../Resources/Хвост феи.jpg");
                 label1.Text = "Это аниме";
             }
             if (pictureName == "Херня")
             {
-                pictureBox1.Load("../../Resources/Херня.jpg");
                 label1.Text = "Это оно";
             }
             if (pictureName == "Арми")
             {
-                pictureBox1.Load("../../Resources/Арми.jpg");
                 label1.Text = "Это BTS!!!!!!!!!!";
             }
             if (pictureName == "Йода")
             {
-                pictureBox1.Load("../../Resources/Йода.jpg");
                 label1.Text = "Это милый йода";
             }
             if (pictureName == "Стар")
             {
-                pictureBox1.Load("../../Resources/Стар.jpg");
                 label1.Text = "Это Стар против сил зла";
             }
         }
@@ -50,6 +52,11 @@ namespace WindowsFormsApp4
         }
 
         private void PictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label1_Click(object sender, EventArgs e)
         {
 
         }
