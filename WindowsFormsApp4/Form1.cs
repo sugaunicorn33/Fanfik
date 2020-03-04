@@ -16,6 +16,7 @@ namespace WindowsFormsApp4
         public string rating;
         public string naprav;
         public Button b1;
+        public Label l1;
 
         public Fanfik(string zag, string rat, string nap)
         {
@@ -23,12 +24,20 @@ namespace WindowsFormsApp4
             rating = rat;
             naprav = nap;
             b1 = new Button();
+            l1 = new Label();
+
+            try
+            {
+                b1.BackgroundImage = Image.FromFile("../../Resources/" + rat + " " + nap + "/" + zag + ".jpg");
+                b1.BackgroundImageLayout = ImageLayout.Stretch;
+            }
+            catch (Exception) { }
         }
     };
 
     public partial class Form1 : Form
     {
-        Fanfik[] fanfiki = new Fanfik[100];
+        Fanfik[] fanfiki = new Fanfik[12];
         public Form1()
         {
             InitializeComponent();
@@ -48,20 +57,29 @@ namespace WindowsFormsApp4
             fanfiki[11] = new Fanfik("Кот", "G", "Джен");
 
 
-            int x = 66;
+            int x = 10;
+            int y = 10;
 
-            for (int i = 0; i < 12; i++)
+            for (int i = 0; i < fanfiki.Length; i++)
             {
-                fanfiki[i].b1.Location = new Point(x,250);
-                fanfiki[i].b1.Size = new Size(100, 48);
-                fanfiki[i].b1.Text = fanfiki[i].zagolovok;
+                fanfiki[i].b1.Size = new Size(100, 70);
                 fanfiki[i].b1.Click += new EventHandler(Button4_Click);
-                Controls.Add(fanfiki[i].b1);
-                x = x + 100; 
+                panel1.Controls.Add(fanfiki[i].b1);
 
+                fanfiki[i].l1.Location = new Point(x, y + 70);
+                fanfiki[i].l1.Size = new Size(100, 30);
+                fanfiki[i].l1.Text = fanfiki[i].zagolovok;
+                panel1.Controls.Add(fanfiki[i].l1);
+                
+                fanfiki[i].b1.Location = new Point(x, y);
+                fanfiki[i].l1.Location = new Point(x, y + 70);
+                x = x + 100;
+                if (x + 100 > Width)
+                {
+                    x = 10;
+                    y = y + 100;
+                }
             }
-
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -78,18 +96,21 @@ namespace WindowsFormsApp4
             //Все картинки лежат в папках типа @G Слэш@
             string folder = ratingComboBox.Text + " " + napravlennostComboBox.Text;
 
-            int x = 66;
-            for (int i = 0; i < 12; i++)
+            int x = 10;
+            int y = 10;
+            for (int i = 0; i < fanfiki.Length; i++)
             {
                 if (fanfiki[i].rating != ratingComboBox.Text &&
                     ratingComboBox.Text != "Любой рейтинг")
                 {
                     fanfiki[i].b1.Visible = false;
+                    fanfiki[i].l1.Visible = false;
                 }
                 else if (fanfiki[i].naprav != napravlennostComboBox.Text &&
                     napravlennostComboBox.Text != "Любая направленность")
                 {
                     fanfiki[i].b1.Visible = false;
+                    fanfiki[i].l1.Visible = false;
                 }
                 else if (fanfiki[i].rating != ratingComboBox.Text &&
                     ratingComboBox.Text != "Любой рейтинг")
@@ -99,63 +120,19 @@ namespace WindowsFormsApp4
                 else
                 {
                     fanfiki[i].b1.Visible = true;
-                    fanfiki[i].b1.Text = fanfiki[i].zagolovok;
+                    fanfiki[i].l1.Visible = true;
                     fanfiki[i].b1.Tag = fanfiki[i].rating + " " + fanfiki[i].naprav;
-                    fanfiki[i].b1.Location = new Point(x, 250);
-                    x = x + 100;
 
+                    fanfiki[i].b1.Location = new Point(x, y);
+                    fanfiki[i].l1.Location = new Point(x, y + 70);
+                    x = x + 100;
+                    if (x + 100 > Width)
+                    {
+                        x = 10;
+                        y = y + 100;
+                    }
                 }
             }
-
-            /*if (ratingComboBox.Text == "NC-17" && napravlennostComboBox.Text == "Гет")
-            {
-                ReadFanfikForm newForm = new ReadFanfikForm("Хвост феи", "");
-                newForm.Show();
-            }
-            else if (ratingComboBox.Text == "NC-17" && napravlennostComboBox.Text == "Слэш")
-            {
-                ReadFanfikForm newForm = new ReadFanfikForm("Херня", "");
-                newForm.Show();
-            }
-            else if (ratingComboBox.Text == "PG-13" && napravlennostComboBox.Text == "Гет")
-            {
-                ReadFanfikForm newForm = new ReadFanfikForm("Стар", "");
-                newForm.Show();
-            }
-            else if (ratingComboBox.Text == "NC-21" && napravlennostComboBox.Text == "Слэш")
-            {
-                ReadFanfikForm newForm = new ReadFanfikForm("Арми", "");
-                newForm.Show();
-            }
-            else if (ratingComboBox.Text == "G" && napravlennostComboBox.Text == "Джен")
-            {
-                ReadFanfikForm newForm = new ReadFanfikForm("Йода", folder);
-                newForm.Show();
-            }
-            else if (ratingComboBox.Text == "G" && napravlennostComboBox.Text == "Гет")
-            {
-                ReadFanfikForm newForm = new ReadFanfikForm("Силачка", folder);
-                newForm.Show();
-            }
-            else if (ratingComboBox.Text == "G" && napravlennostComboBox.Text == "Слэш")
-            {
-                ReadFanfikForm newForm = new ReadFanfikForm("Чимин и Шуга", folder);
-                newForm.Show();
-            }
-            else if (ratingComboBox.Text == "G" && napravlennostComboBox.Text == "Гет")
-            {
-                ReadFanfikForm newForm = new ReadFanfikForm("Стар Марко", folder);
-                newForm.Show();
-            }
-            else if (ratingComboBox.Text == "G" && napravlennostComboBox.Text == "Гет")
-            {
-                ReadFanfikForm newForm = new ReadFanfikForm("Хвост Клуб", folder);
-                newForm.Show();
-            }
-            else
-            {
-                MessageBox.Show("Нет статей по фильтру");
-            }*/
         }
 
         private void HelpButton_Click(object sender, EventArgs e)

@@ -19,6 +19,7 @@ namespace WindowsFormsApp4
             Text = pictureName;
             try
             {
+                //../../Resources/рейтинг направленность/заголовок.jpg
                 pictureBox1.Load("../../Resources/" + folder + "/" + pictureName + ".jpg");
                 textBox1.Lines = File.ReadAllLines("../../Resources/" + folder + "/" + pictureName + ".txt");
             }
