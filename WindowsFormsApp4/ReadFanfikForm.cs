@@ -12,20 +12,28 @@ namespace WindowsFormsApp4
 {
     public partial class ReadFanfikForm : Form
     {
-        public ReadFanfikForm(string pictureName, string folder)
+        public Fanfik fanfik;
+
+        private void Button3_Click(object sender, EventArgs e)
         {
+            Form1.moyVybor.Add(fanfik);
+        }
+
+        public ReadFanfikForm(Fanfik _fanfik)
+        {
+            fanfik = _fanfik;
             InitializeComponent();
 
-            Text = pictureName;
+            Text = fanfik.zagolovok;
+            label3.Text = fanfik.likes.ToString();
             try
             {
-                //../../Resources/рейтинг направленность/заголовок.jpg
-                pictureBox1.Load("../../Resources/" + folder + "/" + pictureName + ".jpg");
-                textBox1.Lines = File.ReadAllLines("../../Resources/" + folder + "/" + pictureName + ".txt");
+                pictureBox1.Load                    ("../../Resources/" + fanfik.rating + " " + fanfik.naprav + "/" + fanfik.zagolovok + ".jpg");
+                textBox1.Lines = File.ReadAllLines("../../Resources/" + fanfik.rating + " " + fanfik.naprav + "/" + fanfik.zagolovok + ".txt");
             }
             catch (Exception) { }
 
-            if (pictureName == "Хвост феи")
+            /*if (pictureName == "Хвост феи")
             {
                 label1.Text = "Это аниме";
             }
@@ -44,12 +52,11 @@ namespace WindowsFormsApp4
             if (pictureName == "Стар")
             {
                 label1.Text = "Это Стар против сил зла";
-            }
+            }*/
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
-
         }
 
         private void PictureBox1_Click(object sender, EventArgs e)
@@ -61,5 +68,22 @@ namespace WindowsFormsApp4
         {
 
         }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            fanfik.likes = fanfik.likes + 1;
+            label3.Text = fanfik.likes.ToString();
+        }
+
+        private void Label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

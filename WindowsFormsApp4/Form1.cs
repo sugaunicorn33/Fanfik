@@ -15,11 +15,13 @@ namespace WindowsFormsApp4
         public string zagolovok;
         public string rating;
         public string naprav;
+        public int likes;
         public Button b1;
         public Label l1;
 
         public Fanfik(string zag, string rat, string nap)
         {
+            likes = 0;
             zagolovok = zag;
             rating = rat;
             naprav = nap;
@@ -38,6 +40,7 @@ namespace WindowsFormsApp4
     public partial class Form1 : Form
     {
         Fanfik[] fanfiki = new Fanfik[12];
+        public static List<Fanfik> moyVybor = new List<Fanfik>();
         public Form1()
         {
             InitializeComponent();
@@ -149,9 +152,15 @@ namespace WindowsFormsApp4
 
         private void Button4_Click(object sender, EventArgs e)
         {
-            Button butto4 = (Button)sender;
-            ReadFanfikForm newForm = new ReadFanfikForm(butto4.Text, butto4.Tag.ToString());
-            newForm.Show();
+            for (int i = 0; i < fanfiki.Length; i++)
+            {
+                if (sender == fanfiki[i].b1)
+                {
+                    ReadFanfikForm newForm = new ReadFanfikForm(fanfiki[i]);
+                    newForm.ShowDialog();
+                    fanfiki[i] = newForm.fanfik;
+                }
+            }
         }
     }
 }
