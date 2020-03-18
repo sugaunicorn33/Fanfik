@@ -37,3 +37,16 @@ C:\Users\Student\source\repos\Fanfik\WindowsFormsApp4\obj\Debug\WindowsFormsApp4
 C:\Users\Student\source\repos\Fanfik\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.csproj.CoreCompileInputs.cache
 C:\Users\Student\source\repos\Fanfik\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.exe
 C:\Users\Student\source\repos\Fanfik\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.pdb
+C:\Users\art-g\Desktop\Fanfik-master\WindowsFormsApp4\bin\Debug\WindowsFormsApp4.exe.config
+C:\Users\art-g\Desktop\Fanfik-master\WindowsFormsApp4\bin\Debug\WindowsFormsApp4.exe
+C:\Users\art-g\Desktop\Fanfik-master\WindowsFormsApp4\bin\Debug\WindowsFormsApp4.pdb
+C:\Users\art-g\Desktop\Fanfik-master\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.csprojAssemblyReference.cache
+C:\Users\art-g\Desktop\Fanfik-master\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.dopNov2.resources
+C:\Users\art-g\Desktop\Fanfik-master\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.Form1.resources
+C:\Users\art-g\Desktop\Fanfik-master\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.ReadFanfikForm.resources
+C:\Users\art-g\Desktop\Fanfik-master\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.HelpForm.resources
+C:\Users\art-g\Desktop\Fanfik-master\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.Properties.Resources.resources
+C:\Users\art-g\Desktop\Fanfik-master\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.csproj.GenerateResource.cache
+C:\Users\art-g\Desktop\Fanfik-master\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.csproj.CoreCompileInputs.cache
+C:\Users\art-g\Desktop\Fanfik-master\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.exe
+C:\Users\art-g\Desktop\Fanfik-master\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.pdb

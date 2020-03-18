@@ -147,7 +147,7 @@
             this.panel1.AutoScroll = true;
             this.panel1.Location = new System.Drawing.Point(13, 215);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(607, 168);
+            this.panel1.Size = new System.Drawing.Size(647, 168);
             this.panel1.TabIndex = 8;
             // 
             // Form1
@@ -155,7 +155,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Wheat;
-            this.ClientSize = new System.Drawing.Size(632, 450);
+            this.ClientSize = new System.Drawing.Size(672, 450);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -164,8 +164,8 @@
             this.Controls.Add(this.ratingComboBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
-            this.MaximumSize = new System.Drawing.Size(648, 489);
-            this.MinimumSize = new System.Drawing.Size(648, 489);
+            this.MaximumSize = new System.Drawing.Size(688, 489);
+            this.MinimumSize = new System.Drawing.Size(688, 489);
             this.Name = "Form1";
             this.Text = "Ледя";
             this.Load += new System.EventHandler(this.Form1_Load);

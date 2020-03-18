@@ -15,12 +15,14 @@ namespace WindowsFormsApp4
         public string zagolovok;
         public string rating;
         public string naprav;
+        public string comment;
         public int likes;
         public Button b1;
         public Label l1;
 
         public Fanfik(string zag, string rat, string nap)
         {
+            comment = "";
             likes = 0;
             zagolovok = zag;
             rating = rat;
@@ -77,7 +79,7 @@ namespace WindowsFormsApp4
                 fanfiki[i].b1.Location = new Point(x, y);
                 fanfiki[i].l1.Location = new Point(x, y + 70);
                 x = x + 100;
-                if (x + 100 > Width)
+                if (x + 100 > panel1.Width)
                 {
                     x = 10;
                     y = y + 100;
@@ -129,7 +131,7 @@ namespace WindowsFormsApp4
                     fanfiki[i].b1.Location = new Point(x, y);
                     fanfiki[i].l1.Location = new Point(x, y + 70);
                     x = x + 100;
-                    if (x + 100 > Width)
+                    if (x + 100 > panel1.Width)
                     {
                         x = 10;
                         y = y + 100;
