@@ -16,7 +16,9 @@ namespace WindowsFormsApp4
 
         private void Button3_Click(object sender, EventArgs e)
         {
-            Form1.moyVybor.Add(fanfik);
+            
+            if (!Form1.moyVybor.Contains(fanfik))
+                 Form1.moyVybor.Add(fanfik);
         }
 
         public ReadFanfikForm(Fanfik _fanfik)
@@ -72,7 +74,7 @@ namespace WindowsFormsApp4
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            fanfik.comment = textBox2.Text;
+            fanfik.comment = textBox1.Text;
         }
 
         private void Button2_Click(object sender, EventArgs e)

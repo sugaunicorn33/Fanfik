@@ -21,5 +21,10 @@ namespace WindowsFormsApp4
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           // fanfik.comment = textBox2.Text;
+        }
     }
 }

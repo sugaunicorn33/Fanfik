@@ -36,6 +36,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -44,13 +45,14 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(193, 389);
+            this.button1.Location = new System.Drawing.Point(169, 406);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(256, 49);
+            this.button1.Size = new System.Drawing.Size(14, 15);
             this.button1.TabIndex = 0;
             this.button1.Text = "Читать";
             this.button1.UseCompatibleTextRendering = true;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // label2
@@ -150,12 +152,29 @@
             this.panel1.Size = new System.Drawing.Size(647, 168);
             this.panel1.TabIndex = 8;
             // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.DarkGreen;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button4.Location = new System.Drawing.Point(201, 389);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(256, 49);
+            this.button4.TabIndex = 9;
+            this.button4.Text = "Сборник";
+            this.button4.UseCompatibleTextRendering = true;
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Wheat;
             this.ClientSize = new System.Drawing.Size(672, 450);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -163,7 +182,6 @@
             this.Controls.Add(this.napravlennostComboBox);
             this.Controls.Add(this.ratingComboBox);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
             this.MaximumSize = new System.Drawing.Size(688, 489);
             this.MinimumSize = new System.Drawing.Size(688, 489);
             this.Name = "Form1";
@@ -184,6 +202,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button4;
     }
 }
 

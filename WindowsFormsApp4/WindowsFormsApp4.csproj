@@ -58,6 +58,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cborn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cborn.Designer.cs">
+      <DependentUpon>Cborn.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReadFanfikForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Cborn.resx">
+      <DependentUpon>Cborn.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="dopNov2.resx">
       <DependentUpon>dopNov2.cs</DependentUpon>
     </EmbeddedResource>

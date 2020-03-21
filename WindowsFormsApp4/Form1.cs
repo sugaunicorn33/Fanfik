@@ -164,5 +164,11 @@ namespace WindowsFormsApp4
                 }
             }
         }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            Cborn form2 = new Cborn();
+            form2.Show();
+        }
     }
 }
