@@ -21,7 +21,7 @@ namespace WindowsFormsApp4
             {
                 Button b1 = new Button(); 
                 b1.Size = new Size(100, 70);
-                //fanfiki[i].b1.Click += new EventHandler(Button4_Click);
+                b1.Click += new EventHandler(Form1.Button4_Click);
                 b1.BackgroundImage = fanfik.b1.BackgroundImage;
                 b1.Size = new Size(100, 70);
                 b1.Location = new Point(x, y);

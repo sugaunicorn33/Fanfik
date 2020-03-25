@@ -29,6 +29,7 @@ namespace WindowsFormsApp4
             Text = fanfik.zagolovok;
             label3.Text = fanfik.likes.ToString();
             textBox2.Text = fanfik.comment;
+           
             try
             {
                 pictureBox1.Load                    ("../../Resources/" + fanfik.rating + " " + fanfik.naprav + "/" + fanfik.zagolovok + ".jpg");
@@ -74,7 +75,7 @@ namespace WindowsFormsApp4
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            fanfik.comment = textBox1.Text;
+            fanfik.comment = textBox2.Text;
         }
 
         private void Button2_Click(object sender, EventArgs e)
@@ -83,7 +84,7 @@ namespace WindowsFormsApp4
             label3.Text = fanfik.likes.ToString();
         }
 
-        private void Label3_Click(object sender, EventArgs e)
+        private void Label3_Click(object sender,  EventArgs e)
         {
 
         }

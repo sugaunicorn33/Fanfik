@@ -41,7 +41,7 @@ namespace WindowsFormsApp4
 
     public partial class Form1 : Form
     {
-        Fanfik[] fanfiki = new Fanfik[12];
+        public static Fanfik[] fanfiki = new Fanfik[12];
         public static List<Fanfik> moyVybor = new List<Fanfik>();
         public Form1()
         {
@@ -152,11 +152,11 @@ namespace WindowsFormsApp4
             newForm.ShowDialog();
         }
 
-        private void Button4_Click(object sender, EventArgs e)
+        public static void Button4_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < fanfiki.Length; i++)
             {
-                if (sender == fanfiki[i].b1)
+                if (((Button)sender).BackgroundImage == fanfiki[i].b1.BackgroundImage)
                 {
                     ReadFanfikForm newForm = new ReadFanfikForm(fanfiki[i]);
                     newForm.ShowDialog();
