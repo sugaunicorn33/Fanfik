@@ -41,31 +41,31 @@ namespace WindowsFormsApp4
 
     public partial class Form1 : Form
     {
-        public static Fanfik[] fanfiki = new Fanfik[12];
+        public static List<Fanfik> fanfiki = new List<Fanfik>();
         public static List<Fanfik> moyVybor = new List<Fanfik>();
         public Form1()
         {
             InitializeComponent();
 
             //fanfiki[0] = 
-            fanfiki[0] = new Fanfik("Силачка", "G", "Гет");
-            fanfiki[1] = new Fanfik("Теперь ты боишься меня", "G", "Гет");
-            fanfiki[2] = new Fanfik("Группа Bad Girls", "G", "Гет");
-            fanfiki[3] = new Fanfik("Чимин и Шуга", "G", "Слэш");
-            fanfiki[4] = new Fanfik("Dee", "G", "Слэш");
-            fanfiki[5] = new Fanfik("ЛГБТ", "G", "Фемслэш");
-            fanfiki[6] = new Fanfik("Лесби", "G", "Фемслэш");
-            fanfiki[7] = new Fanfik("Лесби2", "G", "Фемслэш");
-            fanfiki[8] = new Fanfik("Класс убийц", "G", "Слэш");
-            fanfiki[9] = new Fanfik("Моя туса", "G", "Джен");
-            fanfiki[10] = new Fanfik("Йода", "G", "Джен");
-            fanfiki[11] = new Fanfik("Кот", "G", "Джен");
+            fanfiki.Add(new Fanfik("Силачка", "G", "Гет"));
+            fanfiki.Add(new Fanfik("Теперь ты боишься меня", "G", "Гет"));
+            fanfiki.Add(new Fanfik("Группа Bad Girls", "G", "Гет"));
+            fanfiki.Add(new Fanfik("Чимин и Шуга", "G", "Слэш"));
+            fanfiki.Add(new Fanfik("Dee", "G", "Слэш"));
+            fanfiki.Add(new Fanfik("ЛГБТ", "G", "Фемслэш"));
+            fanfiki.Add(new Fanfik("Лесби", "G", "Фемслэш"));
+            fanfiki.Add(new Fanfik("Лесби2", "G", "Фемслэш"));
+            fanfiki.Add(new Fanfik("Класс убийц", "G", "Слэш"));
+            fanfiki.Add(new Fanfik("Моя туса", "G", "Джен"));
+            fanfiki.Add(new Fanfik("Йода", "G", "Джен"));
+            fanfiki.Add(new Fanfik("Кот", "G", "Джен"));
 
-
+            #region  Что-тто
             int x = 10;
             int y = 10;
 
-            for (int i = 0; i < fanfiki.Length; i++)
+            for (int i = 0; i < fanfiki.Count; i++)
             {
                 fanfiki[i].b1.Size = new Size(100, 70);
                 fanfiki[i].b1.Click += new EventHandler(Button4_Click);
@@ -85,7 +85,9 @@ namespace WindowsFormsApp4
                     y = y + 100;
                 }
             }
+            #endregion
         }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -103,7 +105,7 @@ namespace WindowsFormsApp4
 
             int x = 10;
             int y = 10;
-            for (int i = 0; i < fanfiki.Length; i++)
+            for (int i = 0; i < fanfiki.Count; i++)
             {
                 if (fanfiki[i].rating != ratingComboBox.Text &&
                     ratingComboBox.Text != "Любой рейтинг")
@@ -124,6 +126,13 @@ namespace WindowsFormsApp4
                 }
                 else
                 {
+                    if (fanfiki[i].b1.Parent == null)
+                    {
+                        panel1.Controls.Add(fanfiki[i].b1);
+                        panel1.Controls.Add(fanfiki[i].l1);
+
+                    }
+                    
                     fanfiki[i].b1.Visible = true;
                     fanfiki[i].l1.Visible = true;
                     fanfiki[i].b1.Tag = fanfiki[i].rating + " " + fanfiki[i].naprav;
@@ -154,7 +163,7 @@ namespace WindowsFormsApp4
 
         public static void Button4_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < fanfiki.Length; i++)
+            for (int i = 0; i < fanfiki.Count; i++)
             {
                 if (((Button)sender).BackgroundImage == fanfiki[i].b1.BackgroundImage)
                 {
