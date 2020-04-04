@@ -47,20 +47,13 @@ namespace WindowsFormsApp4
         {
             InitializeComponent();
 
-            //fanfiki[0] = 
-            fanfiki.Add(new Fanfik("Силачка", "G", "Гет"));
-            fanfiki.Add(new Fanfik("Теперь ты боишься меня", "G", "Гет"));
-            fanfiki.Add(new Fanfik("Группа Bad Girls", "G", "Гет"));
-            fanfiki.Add(new Fanfik("Чимин и Шуга", "G", "Слэш"));
-            fanfiki.Add(new Fanfik("Dee", "G", "Слэш"));
-            fanfiki.Add(new Fanfik("ЛГБТ", "G", "Фемслэш"));
-            fanfiki.Add(new Fanfik("Лесби", "G", "Фемслэш"));
-            fanfiki.Add(new Fanfik("Лесби2", "G", "Фемслэш"));
-            fanfiki.Add(new Fanfik("Класс убийц", "G", "Слэш"));
-            fanfiki.Add(new Fanfik("Моя туса", "G", "Джен"));
-            fanfiki.Add(new Fanfik("Йода", "G", "Джен"));
-            fanfiki.Add(new Fanfik("Кот", "G", "Джен"));
-
+            string[] lines = System.IO.File.ReadAllLines("Массив.txt");
+            foreach (string str in lines)
+            {
+                string[] parts = str.Split(new string[] { ", " }, StringSplitOptions.None);
+                fanfiki.Add(new Fanfik(parts[0], parts[1], parts[2]));
+            }
+           
             #region  Что-тто
             int x = 10;
             int y = 10;
