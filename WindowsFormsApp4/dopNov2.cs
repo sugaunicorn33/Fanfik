@@ -41,22 +41,36 @@ namespace WindowsFormsApp4
               System.IO.File.Copy(openFileDialog1.FileName,
                 "../../Resources/" + rating + " " + naprav + "/" + zagolovok + ".jpg");
                 */
-            System.IO.File.AppendAllText("Массив.txt",
-                 Environment.NewLine + textBox2.Text + ", " + comboBox1.Text + ", " + comboBox2.Text + Environment.NewLine);
+            System.IO.File.AppendAllText("Массив.txt", Environment.NewLine + textBox2.Text + ", " + comboBox1.Text + ", " + comboBox2.Text);
+
+            System.IO.File.Copy(FileName,
+                "../../Resources/" + 
+                comboBox1.Text + " " +
+                comboBox2.Text + "/" +
+                textBox2.Text +  ".jpg");
         }
 
         private void dopNov2_Load(object sender, EventArgs e)
-        {
+        { 
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        string FileName;
+            private void button2_Click(object sender, EventArgs e)
         {
-            openFileDialog1.ShowDialog();
-            pictureBox1.Load(openFileDialog1.FileName);
-
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                FileName = openFileDialog1.FileName;
+                pictureBox1.Load(FileName);
+                
+            }
           
            
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
