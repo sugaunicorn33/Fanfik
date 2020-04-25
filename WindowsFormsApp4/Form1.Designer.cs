@@ -42,6 +42,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.рекомендацииToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.button5 = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -194,7 +195,7 @@
             // рекомендацииToolStripMenuItem
             // 
             this.рекомендацииToolStripMenuItem.Name = "рекомендацииToolStripMenuItem";
-            this.рекомендацииToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.рекомендацииToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.рекомендацииToolStripMenuItem.Text = "Рекомендации";
             this.рекомендацииToolStripMenuItem.Click += new System.EventHandler(this.рекомендацииToolStripMenuItem_Click);
             // 
@@ -203,6 +204,16 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(521, 81);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(128, 82);
+            this.button5.TabIndex = 11;
+            this.button5.Text = "gbcvj ";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -210,6 +221,7 @@
             this.BackColor = System.Drawing.Color.Wheat;
             this.ClientSize = new System.Drawing.Size(672, 450);
             this.ContextMenuStrip = this.contextMenuStrip1;
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button4);
@@ -246,6 +258,7 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem рекомендацииToolStripMenuItem;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button button5;
     }
 }
 

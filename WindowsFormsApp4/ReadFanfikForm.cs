@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
@@ -92,6 +93,14 @@ namespace WindowsFormsApp4
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            WebClient wc = new WebClient();
+            wc.DownloadFile("https://avidreaders.ru/download/vedmak.html?f=pdf",
+                "C:\\Users\\" + Environment.UserName + "\\Download\\5.pdf");
+            MessageBox.Show("Сохранено в 5.pdf");
         }
     }
 }

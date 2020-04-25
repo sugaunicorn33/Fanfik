@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Net;
+using System.Net.Mail;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -185,6 +187,31 @@ namespace WindowsFormsApp4
                 label1.Visible = true;
             else
                 label1.Visible = false;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            MailAddress fromMailAddress = new MailAddress("kersakovakira@gmail.com", "Сахарный Единорог");
+            MailAddress toAddress = new MailAddress("kersakovakira@gmail.com", "Сахарный Единорог");
+
+            using (MailMessage mailMessage = new MailMessage(fromMailAddress, toAddress))
+            using (SmtpClient smtpClient = new SmtpClient())
+            {
+
+
+                mailMessage.Subject = "Это не спам";
+                mailMessage.Body = "ЕЕЕЕЕЕЕЕЕЕЕЕЕ";
+
+
+                smtpClient.Host = "smtp.gmail.com";
+                smtpClient.Port = 587;
+                smtpClient.EnableSsl = true;
+                smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtpClient.UseDefaultCredentials = false;
+                smtpClient.Credentials = new NetworkCredential(fromMailAddress.Address, "zm33alt3qpk13");
+
+                smtpClient.Send(mailMessage);
+            }
         }
     }
 }
