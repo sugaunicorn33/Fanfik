@@ -200,7 +200,8 @@ namespace WindowsFormsApp4
 
 
                 mailMessage.Subject = "Это не спам";
-                mailMessage.Body = "ЕЕЕЕЕЕЕЕЕЕЕЕЕ";
+                mailMessage.IsBodyHtml = true;
+                mailMessage.Body = System.IO.File.ReadAllText("Шаблон.txt");
 
 
                 smtpClient.Host = "smtp.gmail.com";
